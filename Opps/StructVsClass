@@ -1,0 +1,45 @@
+# Structs vs. Classes
+
+| Feature                  | Structs                     | Classes                     |
+|--------------------------|-----------------------------|-----------------------------|
+| **Memory Allocation**    | Value type (stack)          | Reference type (heap)       |
+| **Default Accessibility**| Members are public by default | Members are private by default |
+| **Inheritance**          | Cannot be inherited         | Can be used as a base class |
+| **Nullability**          | Cannot be set to null       | Can be set to null          |
+| **Default Constructor**  | No default parameterless constructor | Default parameterless constructor generated |
+| **Usage Scenario**       | Lightweight data structures | Complex objects with behavior |
+
+## Overview
+
+In many object-oriented programming languages, such as C++ and C#, both structs and classes are used to define custom data types, but they have some key differences. Here are the main distinctions between structs and classes:
+
+1. **Memory Allocation:**
+   - **Structs:** Instances of structs are value types, and they are typically allocated on the stack. This means that when a struct is assigned to another variable or passed as a parameter, a copy of the entire struct is created.
+   - **Classes:** Instances of classes are reference types, and they are usually allocated on the heap. When a class is assigned to another variable or passed as a parameter, only the reference (memory address) is copied, not the entire object.
+
+2. **Default Accessibility:**
+   - **Structs:** Members of a struct are public by default. You can use the `public`, `private`, or `protected` keywords to control the visibility of members, but it is optional.
+   - **Classes:** Members of a class are private by default. You need to use the `public`, `private`, or `protected` keywords to specify the visibility of members.
+
+3. **Inheritance:**
+   - **Structs:** Cannot be inherited or used as a base for other structs or classes.
+   - **Classes:** Can be used as a base class for other classes, supporting inheritance.
+
+4. **Nullability:**
+   - **Structs:** Cannot be set to null, as they are value types.
+   - **Classes:** Can be set to null since they are reference types.
+
+5. **Default Constructor:**
+   - **Structs:** Do not have a default parameterless constructor automatically generated. You need to provide a value for each field in the struct during instantiation.
+   - **Classes:** Have a default parameterless constructor generated automatically if no constructor is explicitly defined.
+
+6. **Usage Scenario:**
+   - **Structs:** Typically used for lightweight objects that represent a simple piece of data (e.g., a Point, Rectangle, etc.) and do not require complex behavior or inheritance.
+   - **Classes:** Used for more complex objects, encapsulating data and behavior. They are suitable for modeling entities with identity, complex relationships, and behavior.
+
+## Choosing Between Structs and Classes
+
+- Use **structs** for simple data structures with minimal behavior and no need for inheritance.
+- Use **classes** for more complex objects with behavior, relationships, and the potential for inheritance.
+
+Remember to consider the specific requirements of your program or application when deciding between structs and classes.
